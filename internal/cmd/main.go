@@ -24,8 +24,6 @@ func main() {
 	config.InitLogger()
 	config.InitJWT()
 
-	log.Println("подключаемся к БД")
-
 	db.ConnectDB()
 	defer db.CloseDB()
 

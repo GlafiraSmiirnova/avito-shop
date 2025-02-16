@@ -28,7 +28,7 @@ trace.log
 pgdata/
 data/
 dbdata/
-!data/migrations/  # Оставляем миграции
+!data/migrations/
 
 *.cover
 .coverprofile
