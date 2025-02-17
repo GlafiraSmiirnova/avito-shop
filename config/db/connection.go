@@ -12,9 +12,6 @@ var DB *pgxpool.Pool
 
 func ConnectDB() {
 	dbName := os.Getenv("DATABASE_NAME")
-	if os.Getenv("TEST_MODE") == "test_db" {
-		dbName = "test_db"
-	}
 
 	dsn := fmt.Sprintf(
 		"postgres://%s:%s@%s:%s/%s?sslmode=disable",

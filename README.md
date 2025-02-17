@@ -21,7 +21,7 @@ docker compose up -d
 ### Запуск интеграционных тестов
 
 ```sh
-docker compose up test-runner
+docker compose -f docker-compose.test.yaml up -d && docker logs -f test-runner
 ```
 
 
@@ -32,3 +32,4 @@ docker compose up test-runner
 3. Для того, чтобы репозитории могли работать и в рамках транзакций, и в рамках прямых запросов к БД, был введен интерфейс **Executor** (`config/db`).
 4. В целях стандартизации при отсутствии тех или иных компонентов-списков в JSON возвращаются пустые списки, а не null-значения.
 5. Для использования в юнит-тестах функции для управления транзакциями в `config/db/transaction.go` были объявлены как переменные.
+6. Для разделения прод- и тест-режима работы сервера контейнеры были распределены на `docker-compose.yaml` и `docker-compose.test.yaml` соответственно.
